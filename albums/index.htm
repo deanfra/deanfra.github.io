@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<!-- saved from url=(0042)http://blacktie.co/demo/instant/index.html -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="shortcut icon" href="http://blacktie.co/demo/instant/assets/ico/favicon.ico">
+
+    <title>Francis Family Tree Albums</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="./assets/bootstrap.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="./assets/style.css" rel="stylesheet">
+    <link href="./assets/font-awesome.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans+Condensed:700" rel="stylesheet">
+
+    <!-- Just for debugging purposes. Don't actually copy this line! -->
+    <!--[if lt IE 9]><script src="../../assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  <style type="text/css">
+    * {
+      transition: all 0.8s ease-out;
+    }
+    :root .main-ad,
+    :root #content > #right > .dose > .dosesingle,
+    :root #content > #center > .dose > .dosesingle
+      { display: none !important; }
+  </style>
+  <script src="./assets/jquery.min.js"></script>
+  <script src="./assets/bootstrap.min.js"></script>
+  <script src="./assets/handlebars.min-latest.js"></script>
+
+  </head>
+  <body>
+
+    <!-- Static navbar -->
+    <div class="navbar navbar-default navbar-fixed-top" role="navigation">
+      <div class="container">
+        <!-- <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="http://blacktie.co/demo/instant/index.html">INSTANT</a>
+        </div>
+        <div class="navbar-collapse collapse">
+          <ul class="nav navbar-nav navbar-right">
+            <li class="active"><a href="http://blacktie.co/demo/instant/index.html">Home</a></li>
+            <li><a href="http://blacktie.co/demo/instant/about.html">About</a></li>
+            <li><a href="http://blacktie.co/demo/instant/index.html#works">Works</a></li>
+          </ul>
+        </div> --><!--/.nav-collapse -->
+      </div>
+    </div>
+
+
+	<div id="headerwrap" style="background: #333" class="hidden">
+	    <div class="container">
+			<div class="row">
+				<div class="col-lg-6 col-lg-offset-3">
+					<h4>FRANCIS</h4>
+					<h1>FAMILY TREE</h1>
+					<h4>THE EXTENDED FAMILY OF MILDRED LENORE AND CEDRIC CLAUDE</h4>
+				</div>
+			</div>
+	    </div>
+	</div>
+
+	<div class="container hidden" id="albumswrap">
+		<div class="row centered mt mb">
+			<h1>ALBUMS</h1>
+      <div id="albumContainer"></div>
+		</div>
+	</div>
+
+	<!-- --
+	<div id="social">
+		<div class="container">
+			<div class="row centered">
+				<div class="col-lg-2">
+					<a href="http://blacktie.co/demo/instant/index.html#"><i class="fa fa-dribbble"></i></a>
+				</div>
+				<div class="col-lg-2">
+					<a href="http://blacktie.co/demo/instant/index.html#"><i class="fa fa-facebook"></i></a>
+				</div>
+				<div class="col-lg-2">
+					<a href="http://blacktie.co/demo/instant/index.html#"><i class="fa fa-twitter"></i></a>
+				</div>
+				<div class="col-lg-2">
+					<a href="http://blacktie.co/demo/instant/index.html#"><i class="fa fa-linkedin"></i></a>
+				</div>
+				<div class="col-lg-2">
+					<a href="http://blacktie.co/demo/instant/index.html#"><i class="fa fa-instagram"></i></a>
+				</div>
+				<div class="col-lg-2">
+					<a href="http://blacktie.co/demo/instant/index.html#"><i class="fa fa-tumblr"></i></a>
+				</div>
+
+			</div>
+		</div>
+	</div>
+  <!-- --/social ---->
+
+	<div id="footerwrap" class="hidden">
+		<div class="container">
+			<div class="row centered">
+				<div class="col-lg-4">
+					<p><b>TESTING</b></p>
+				</div>
+				<div class="col-lg-4">
+					<p>deanfranci@gmail.com</p>
+				</div>
+			</div>
+		</div>
+	</div><!-- --/footerwrap ---->
+
+
+</body></html>
+
+  <script id="album-template" type="text/x-handlebars-template">
+    {{#each album}}
+      <div class="col-lg-4 col-md-4 col-xs-12 gallery album">
+        <a href="{{href}}" class="album-link" style="background-image: url({{background}})" target="_blank">
+          <span class="title">{{title}}</span>
+          <span class="description">{{description}}<br/><span class="link">Visit album</a></span>
+          <span class="bg"></span>
+        </a>
+      </div>
+    {{/each}}
+  </script>
+
+<script>
+  albumShelf = {
+    album:[
+      {
+        title: 'Mildura',
+        href: 'https://www.flickr.com/gp/143192578@N03/0ekE2g',
+        description: 'The family lived in Mildura from the 30\'s to the 40\'s',
+        background: 'https://c7.staticflickr.com/9/8170/29187941342_c7b1299f8e_n.jpg'
+      },{
+        title: 'Yinnar',
+        href: 'https://www.flickr.com/gp/143192578@N03/5x3353',
+        description: 'Three generations of the Francis family lived on William Francis Senior\'s selection, from the 1880s to the 1920s',
+        background: 'https://c7.staticflickr.com/9/8846/28700010174_59273c5ee8.jpg'
+      },{
+        title: 'Clayton',
+        href: 'https://www.flickr.com/gp/143192578@N03/V6dG0r',
+        description: 'In Alice St, Clayton',
+        background: 'https://c8.staticflickr.com/9/8278/29265130311_3d81aaa9b9.jpg'
+      },{
+        title: 'Huege de Serville',
+        href: 'https://www.flickr.com/gp/143192578@N03/c1f169',
+        description: 'Cedric\'s mother\'s family lived in Timaru and Hokitika New Zealand.',
+        background: 'https://c7.staticflickr.com/9/8417/29312456966_f5711e6da6_n.jpg'
+      },{
+        title: 'Walter & Florence',
+        href: 'https://www.flickr.com/gp/https://www.flickr.com/photos/143192578@N03/sets/72157672230646622',
+        description: 'Mildred\'s parent\'s families, her father\'s side Seaman & Hartley and mother\'s side Paddick & Buddle. The Seamans are from inner Adelaide and the Paddicks from Clarendon, SA',
+        background: 'https://c8.staticflickr.com/9/8288/29294388471_2603032c5e_m.jpg'
+      },{
+        title: 'Francis family',
+        href: 'https://www.flickr.com/gp/143192578@N03/0e2nze',
+        description: 'Assorted Francis family photos from all over the family tree. Including Cedric and Mildred\'s children, Cedric\'s ancestors and Cedric\'s extended family.',
+        background: 'https://c6.staticflickr.com/9/8504/28745213973_068ae9c0e6_n.jpg'
+      },{
+        title: 'Needs info',
+        href: 'https://www.flickr.com/gp/143192578@N03/0879j6',
+        description: 'Unsorted family pictures that don\'t have enough information',
+        background: 'https://c1.staticflickr.com/9/8626/28924122064_7064d49059_n.jpg'
+      }
+
+  ]};
+  $(function() {
+      tl.init();
+  });
+  tl = {
+    init: function(){
+      var param = window.location.search.replace('?','');
+      if (~(param)===-1532622544) { //5827589839
+        $('#headerwrap, #albumswrap, #footerwrap').removeClass('hidden');
+        tl.renderAlbums();
+      } else {
+        alert('Incorrect password')
+      }
+    },
+    renderAlbums: function(){
+      var $html = $('<div class="albums" />');
+      var source   = $("#album-template").html();
+      var template = Handlebars.compile(source);
+      var html    = template(albumShelf);
+      console.log(html);
+      $(html).appendTo('#albumContainer')
+    }
+  }
+</script>
