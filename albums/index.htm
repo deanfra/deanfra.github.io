@@ -31,22 +31,22 @@
   <script src="./assets/handlebars.min-latest.js"></script>
 
   </head>
-  <body>
+<body>
 
-    <!-- Static navbar -->
-    <div class="navbar navbar-default navbar-fixed-top" role="navigation">
-      <div class="container">
-      </div>
+  <!-- Static navbar -->
+  <div class="navbar navbar-default navbar-fixed-top" role="navigation">
+    <div class="container">
     </div>
+  </div>
 
 
 	<div id="headerwrap" style="background: #333" class="hidden">
 	    <div class="container">
 			<div class="row">
 				<div class="col-lg-6 col-lg-offset-3">
-					<h4>FRANCIS</h4>
-					<h1>FAMILY TREE</h1>
-					<h4>THE EXTENDED FAMILY OF MILDRED LENORE AND CEDRIC CLAUDE</h4>
+					<h4>Francis</h4>
+					<h1>Family tree</h1>
+					<h4>The extended family of mildred lenore and cedric claude</h4>
 				</div>
 			</div>
 	    </div>
@@ -54,67 +54,196 @@
 
 	<div class="container hidden" id="albumswrap">
 		<div class="row centered mt mb">
-			<h1>ALBUMS</h1>
-      <div id="albumContainer"></div>
-		</div>
-	</div>
 
-	<div id="footerwrap" class="hidden">
-		<div class="container">
-			<div class="row centered">
-				<div class="col-lg-4">
-					<p><b>TESTING</b></p>
-				</div>
-				<div class="col-lg-4">
-					<p>deanfranci@gmail.com</p>
-				</div>
-			</div>
-		</div>
-	</div><!-- --/footerwrap ---->
+      <div id="albumContainer"></div>
+
+      <script id="album-template" type="text/x-handlebars-template">
+
+        <h1>Collections</h1>
+        <div class="clearfix">
+          {{#each collection}}
+            <div class="col-lg-4 col-md-4 col-xs-12 gallery album">
+              <a href="{{href}}" class="album-link" target="_blank"
+                 style="
+                  background-image: url({{background}});
+                  {{#if bgPosition}}background-position: {{bgPosition}};{{/if}}
+                  {{#if bgSize}}background-size: {{bgSize}};{{/if}}
+                  ">
+                <span class="title">{{title}}</span>
+                <span class="description">{{description}}<br/><span class="link">Visit album</a></span>
+                <span class="bg"></span>
+              </a>
+            </div>
+          {{/each}}
+        </div>
+
+        <h1>Cedric's Side</h1>
+        <div class="clearfix">
+          {{#each cedric}}
+            <div class="col-lg-4 col-md-4 col-xs-12 gallery album">
+              <a href="{{href}}" class="album-link" target="_blank"
+                 style="
+                  background-image: url({{background}});
+                  {{#if bgPosition}}background-position: {{bgPosition}};{{/if}}
+                  {{#if bgSize}}background-size: {{bgSize}};{{/if}}
+                  ">
+                <span class="title">{{title}}</span>
+                <span class="description">{{description}}<br/><span class="link">Visit album</a></span>
+                <span class="bg"></span>
+              </a>
+            </div>
+          {{/each}}
+        </div>
+
+        <h1>Mildred's Side</h1>
+        <div class="clearfix">
+          {{#each mildred}}
+            <div class="col-lg-4 col-md-4 col-xs-12 gallery album">
+              <a href="{{href}}" class="album-link" target="_blank"
+                 style="
+                  background-image: url({{background}});
+                  {{#if bgPosition}}background-position: {{bgPosition}};{{/if}}
+                  {{#if bgSize}}background-size: {{bgSize}};{{/if}}
+                  ">
+                <span class="title">{{title}}</span>
+                <span class="description">{{description}}<br/><span class="link">Visit album</a></span>
+                <span class="bg"></span>
+              </a>
+            </div>
+          {{/each}}
+        </div>
+
+        <h2>Family</h2>
+
+        <div class="clearfix">
+          {{#each person}}
+            <div class="col-lg-3 col-md-3 col-xs-12 gallery album">
+              <a href="{{href}}" class="album-link" target="_blank"
+                 style="
+                  background-image: url({{background}});
+                  {{#if bgPosition}}background-position: {{bgPosition}};{{/if}}
+                  {{#if bgSize}}background-size: {{bgSize}};{{/if}}
+                  ">
+                <span class="title">{{title}}</span>
+                <span class="description">{{description}}<br/><span class="link">Visit album</a></span>
+                <span class="bg"></span>
+              </a>
+            </div>
+          {{/each}}
+        </div>
+      </script>
+
+    </div>
+  </div>
+
+  <div id="footerwrap" class="hidden">
+    <div class="container">
+      <div class="row centered">
+        <div class="col-lg-4 col-lg-push-4">
+          <p>deanfranci@gmail.com</p>
+        </div>
+      </div>
+    </div>
+  </div><!-- --/footerwrap ---->
 
 
 </body></html>
 
-  <script id="album-template" type="text/x-handlebars-template">
-    {{#each album}}
-      <div class="col-lg-4 col-md-4 col-xs-12 gallery album">
-        <a href="{{href}}" class="album-link" style="background-image: url({{background}})" target="_blank">
-          <span class="title">{{title}}</span>
-          <span class="description">{{description}}<br/><span class="link">Visit album</a></span>
-          <span class="bg"></span>
-        </a>
-      </div>
-    {{/each}}
-  </script>
 
 <script>
   albumShelf = {
-    album:[
+
+    cedric:[
+      {
+        title: "Francis' in Yinnar",
+        href: 'https://www.flickr.com/gp/143192578@N03/5x3353',
+        description: 'Three generations of the Francis family lived on William Francis Senior\'s selection, from the 1880s to the 1920s',
+        background: 'https://c7.staticflickr.com/9/8846/28700010174_59273c5ee8.jpg'
+      /*}, {
+        title: 'Wales',
+        href: 'https://www.flickr.com/gp/143192578@N03/5x3353',
+        description: '',
+        background: 'https://c7.staticflickr.com/9/8846/28700010174_59273c5ee8.jpg'*/
+      }, {
+        title: 'Huege de Serville',
+        href: 'https://www.flickr.com/gp/143192578@N03/c1f169',
+        description: 'Cedric\'s mother\'s family lived in Timaru and Hokitika New Zealand.',
+        background: 'https://c7.staticflickr.com/9/8417/29312456966_f5711e6da6_n.jpg'
+      }, {
+        title: 'Egbert Francis',
+        href: 'https://www.flickr.com/gp/143192578@N03/0d6h6P',
+        description: "Cedric's brother",
+        background: 'https://c1.staticflickr.com/5/4194/34138695000_0dbf752cda_k.jpg',
+        bgPosition: 'top'
+      }, {
+        title: 'Leon Francis',
+        href: 'https://www.flickr.com/gp/143192578@N03/375N12',
+        description: "Cedric's brother",
+        background: 'https://c1.staticflickr.com/5/4170/33742924424_b5976ec041_c.jpg'
+      }, {
+        title: 'Valmai Francis',
+        href: 'https://www.flickr.com/gp/143192578@N03/8R0z6T',
+        description: "Cedric's sister",
+        background: 'https://c1.staticflickr.com/3/2851/33968567840_3aff01788b_c.jpg',
+        bgPosition: '-90px -110px',
+        bgSize: 'inherit'
+      }
+    ],
+
+    mildred:[
+      {
+        title: 'Seaman family',
+        href: 'https://www.flickr.com/photos/143192578@N03/sets/72157672230646622',
+        description: 'Mildred\'s father\'s family. The Seamans are from Adelaide\'s inner suburbs.',
+        background: 'https://c1.staticflickr.com/9/8164/29264851092_90aee0aebd_c.jpg'
+      }, {
+        title: 'Paddick family',
+        href: 'https://www.flickr.com/gp/143192578@N03/30Khvj',
+        description: 'Mildred\'s mother\'s family. The Paddicks are from Clarendon, SA',
+        background: 'https://c1.staticflickr.com/5/4175/34650257766_425887a1f4_c.jpg'
+      }, {
+        title: 'Mildred',
+        href: 'https://www.flickr.com/gp/143192578@N03/Rt5oZ7',
+        description: 'Mildred Lenore Martha Francis',
+        background: 'https://c1.staticflickr.com/9/8130/29189321862_dfb6e73d68_n.jpg'
+      }, {
+        title: 'Ella',
+        href: 'https://www.flickr.com/gp/143192578@N03/723Y2p',
+        description: "Mildred's mother",
+        background: 'https://c1.staticflickr.com/9/8288/29294388471_2603032c5e_c.jpg',
+        bgPosition: 'top'
+      }, {
+        title: 'Rhonda Henderson',
+        href: 'https://www.flickr.com/gp/143192578@N03/8M3cNL',
+        description: "Mildred's sister",
+        background: 'https://c1.staticflickr.com/5/4189/34483211636_237e807f95_c.jpg'
+      }, {
+        title: 'Pat Marschall',
+        href: 'https://www.flickr.com/gp/143192578@N03/3e4Dk0',
+        description: "Mildred's sister",
+        background: 'https://c1.staticflickr.com/5/4165/34424076642_920221d749_c.jpg',
+        bgPosition: 'top'
+      }
+    ],
+
+    collection:[
       {
         title: 'Mildura',
         href: 'https://www.flickr.com/gp/143192578@N03/0ekE2g',
         description: 'The family lived in Mildura from the 30\'s to the 40\'s',
         background: 'https://c7.staticflickr.com/9/8170/29187941342_c7b1299f8e_n.jpg'
       },{
-        title: 'Yinnar',
-        href: 'https://www.flickr.com/gp/143192578@N03/5x3353',
-        description: 'Three generations of the Francis family lived on William Francis Senior\'s selection, from the 1880s to the 1920s',
-        background: 'https://c7.staticflickr.com/9/8846/28700010174_59273c5ee8.jpg'
-      },{
         title: 'Clayton',
         href: 'https://www.flickr.com/gp/143192578@N03/V6dG0r',
         description: 'In Alice St, Clayton',
-        background: 'https://c8.staticflickr.com/9/8278/29265130311_3d81aaa9b9.jpg'
+        background: 'https://c8.staticflickr.com/9/8278/29265130311_3d81aaa9b9.jpg',
+        bgPosition: 'left'
       },{
-        title: 'Huege de Serville',
-        href: 'https://www.flickr.com/gp/143192578@N03/c1f169',
-        description: 'Cedric\'s mother\'s family lived in Timaru and Hokitika New Zealand.',
-        background: 'https://c7.staticflickr.com/9/8417/29312456966_f5711e6da6_n.jpg'
-      },{
-        title: 'Walter & Florence',
-        href: 'https://www.flickr.com/photos/143192578@N03/sets/72157672230646622',
-        description: 'Mildred\'s parent\'s families, her father\'s side Seaman & Hartley and mother\'s side Paddick & Buddle. The Seamans are from inner Adelaide and the Paddicks from Clarendon, SA',
-        background: 'https://c8.staticflickr.com/9/8288/29294388471_2603032c5e_m.jpg'
+        title: 'Gembrook',
+        href: 'https://www.flickr.com/gp/143192578@N03/gN2755',
+        description: '',
+        background: 'https://c1.staticflickr.com/5/4180/33742980964_eff1e42aa8_h.jpg',
+        bgPosition: 'top'
       },{
         title: 'Francis family',
         href: 'https://www.flickr.com/gp/143192578@N03/0e2nze',
@@ -126,8 +255,74 @@
         description: 'Unsorted family pictures that don\'t have enough information',
         background: 'https://c1.staticflickr.com/9/8626/28924122064_7064d49059_n.jpg'
       }
-
-  ]};
+    ],
+    person: [
+      {
+        title: 'Cedric',
+        href: 'https://www.flickr.com/gp/143192578@N03/b9Ab98',
+        description: 'Cedric Claude Francis',
+        background: 'https://c1.staticflickr.com/9/8398/29327319315_15bf3bca58_h.jpg'
+      }, {
+        title: 'Mildred',
+        href: 'https://www.flickr.com/gp/143192578@N03/dU12x5',
+        description: 'Mildred Lenore Martha Francis',
+        background: 'https://c1.staticflickr.com/9/8130/29189321862_dfb6e73d68_n.jpg'
+      }, {
+        title: 'Bruce',
+        href: 'https://www.flickr.com/gp/143192578@N03/50K2K5',
+        description: 'Bruce Cedric Francis',
+        background: 'https://c1.staticflickr.com/5/4163/34544724776_c6d6d88a9d_c.jpg',
+        bgPosition: 'top'
+      }, {
+        title: 'Heather',
+        href: 'https://www.flickr.com/gp/143192578@N03/H1q551',
+        description: 'Heather Florence Vurlow (Francis)',
+        background: 'https://c1.staticflickr.com/5/4182/34138717080_d7104c96e2_c.jpg'
+      }, {
+        title: 'Ralph',
+        href: 'https://www.flickr.com/gp/143192578@N03/qZ9Z9t',
+        description: 'Ralph Walter Francis',
+        background: 'https://c1.staticflickr.com/3/2839/34178551232_6358de20e1_c.jpg'
+      }, {
+        title: 'Dawn',
+        href: 'https://www.flickr.com/gp/143192578@N03/90BqW3',
+        description: 'Dawn Lenore Ashford (Francis)',
+        background: 'https://c1.staticflickr.com/5/4158/33742966804_7d78ee6250_c.jpg'
+      }, {
+        title: 'Barry',
+        href: 'https://www.flickr.com/gp/143192578@N03/49hCJ9',
+        description: 'Barry Leon Francis',
+        background: 'https://c1.staticflickr.com/5/4170/33714034553_5ee76a18bd_c.jpg'
+      }, {
+        title: 'Daryl',
+        href: 'https://www.flickr.com/gp/143192578@N03/p59d51',
+        description: 'Daryl John Francis',
+        background: 'https://c1.staticflickr.com/5/4181/34455386771_03b831fc85_c.jpg'
+      }, {
+        title: 'Cheryl',
+        href: 'https://www.flickr.com/gp/143192578@N03/9a089y',
+        description: 'Cheryl Valmai Spykers (Francis)',
+        background: 'https://c1.staticflickr.com/5/4187/34394366571_f5f5b1187f_c.jpg',
+        bgPosition: 'top'
+      }, {
+        title: 'Rex',
+        href: 'https://www.flickr.com/gp/143192578@N03/85285o',
+        description: 'Rex William Francis',
+        background: 'https://c1.staticflickr.com/5/4173/34586136155_bf77637bdd_c.jpg'
+      }, {
+        title: 'Margot',
+        href: 'https://www.flickr.com/gp/143192578@N03/016n43',
+        description: 'Margot Joan Bowden (Francis)',
+        background: 'https://c1.staticflickr.com/5/4159/34138716300_b53f84012a_b.jpg',
+        bgPosition: 'top'
+      }, {
+        title: 'Wayne',
+        href: 'https://www.flickr.com/gp/143192578@N03/L75zJ7',
+        description: 'Wayne Austin Francis',
+        background: 'https://c1.staticflickr.com/3/2806/34336629305_fee1459a99_c.jpg'
+      }
+    ]
+  };
   $(function() {
       tl.init();
   });
@@ -151,3 +346,4 @@
     }
   }
 </script>
+
