@@ -328,6 +328,9 @@
   });
   tl = {
     init: function(){
+        $('#headerwrap, #albumswrap, #footerwrap').removeClass('hidden');
+        tl.renderAlbums();
+
 //       var param = window.location.search.replace('?','');
 //       if (~(param)===-1532622544) { //5827589839
 //         $('#headerwrap, #albumswrap, #footerwrap').removeClass('hidden');
